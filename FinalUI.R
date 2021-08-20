@@ -1,4 +1,5 @@
 
+#import statements 
 library(markdown)
 library(shiny)
 library(shinyWidgets)
@@ -11,7 +12,7 @@ library(rlang)
 shinyUI(fluidPage(
     shinyjs::useShinyjs(),
    
-    # Application title
+    # Application title and home page information
     tags$h2("Plasmid Annotations", style="color:ghostwhite"), setBackgroundColor(color = c("#20B2AA","#1E90FF", "#20B2AA"), gradient = "radial", direction = "bottom"),
     navbarPage("Plasmid Annotation Assistant", 
                tabPanel("Intro",
@@ -38,7 +39,7 @@ The gene visualization will pop up when your annotation is completed and ready f
                                    column(3,
                                           img(src="QF7EcGo.png", height = '275', width = "300"))
                           ),
-               
+               #create tabs on home page for application use
                tabPanel("Annotate", fileInput("file", label =  "Choose file", accept = c(".fasta", ".fsa")), 
                         textInput("outputFile", label = "Enter folder you would like annotations to go to", value = Sys.Date(), placeholder = "prokkaOutput"),
                         actionButton("button","Annotate"),
