@@ -1,0 +1,16 @@
+Instructions for connecting to Rstudio on EC2 instance.
+On EC2 instance copy the public IPv4 address from the instance details tab. It will looks something like this: 54.242.163.208
+Paste that IP address into the web and add the suffix :8787 to direct to the RStudio log in page on the instance (complete address will look like this 54.242.163.208:8787).
+Once at the log in page use the log in credentials defined to log into RStudio and may begin working. 
+
+
+Once the RShiny application is moved into the correct directories on the instance to be launched (see paper) visit and test the website by using the same IP address
+from the instance (here ours was 54.242.163.208) with port 3838. It will look like this 54.242.163.208:3838.
+
+
+Connect to Instance via command line
+Ensure you have the private key for the instance saved in a safe place (you will substitute the place of your pem key between the " " below
+Copy the IPv4 DNS name to be used in the command below. It will look something like this ec2-54-242-163-208.compute-1.amazonaws.com 
+Enter command: ssh -i ".ssh/rshinykp.pem" ubuntu@ec2-54-242-163-208.compute-1.amazonaws.com
+It will ask you if you are sure you want to connecting, say yes
+You should now be logged into the instance on the command line
